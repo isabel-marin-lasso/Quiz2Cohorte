@@ -1,0 +1,52 @@
+package quiz_arreglos;
+
+import java.util.Scanner;
+
+public class Quiz_arreglos {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        int[] numeros = new int[20];
+        int sumaPar = 0, sumaImpar= 0;
+        int sumaPosicionesPares = 0, sumaPosicionesImpares = 0;
+        int contadorPar = 0, contadorImpar = 0;
+    
+        for (int i = 0; i < 20; i++) {
+            System.out.print("Ingresa el numero " + (i + 1) + ": ");
+            numeros[i] = scanner.nextInt();
+            
+        
+            if (numeros[i] % 2 == 0) {
+                sumaPar += numeros[i];
+                contadorPar++;
+            } else {
+                sumaImpar += numeros[i];
+                contadorImpar++;
+            }
+       
+            if (i % 2 == 0) {
+                sumaPosicionesPares += numeros[i];
+            } else {
+                sumaPosicionesImpares += numeros[i];
+            }
+        }
+       
+        if (contadorPar > 0) {
+            double promedioPares = (double) sumaPar / contadorPar;
+            System.out.println("El promedio de los numeros pares es: " + promedioPares);
+        } else {
+            System.out.println("No se ingresaron numeros pares.");
+        }
+
+        if (contadorImpar > 0) {
+            double promedioImpares = (double) sumaImpar / contadorImpar;
+            System.out.println("El promedio de los numeros impares es: " + promedioImpares);
+        } else {
+            System.out.println("No se ingresaron numeros impares.");
+        }
+
+        System.out.println("La suma de los elementos en posiciones pares es: " + sumaPosicionesPares);
+        System.out.println("La suma de los elementos en posiciones impares es: " + sumaPosicionesImpares);
+    }
+}        
