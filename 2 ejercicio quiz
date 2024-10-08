@@ -1,0 +1,35 @@
+package punto2_quiz;
+
+import java.util.Scanner;
+
+public class Punto2_quiz {
+
+    public static void main(String[] args) {
+     Scanner sc = new Scanner (System.in);
+     float[] altura;
+     altura = new float [5];
+       for(int i=0;i<5; i++){
+           System.out.println("ingrese la altura de la persona: ");
+           altura[i]= sc.nextFloat();
+       }
+       float suma=0, promedio =0;
+       for(int j=0;j<5; j++){
+       suma= suma+ altura [j];
+       }
+       promedio= suma/5;
+        System.out.println("promedio de alturas: "+promedio);
+  
+        int mayor,menor;
+        mayor=0;
+        menor=0;
+        for(int j=0;j<5; j++){
+          if (altura[j] < promedio){
+          mayor++;
+          }else if (altura[j]  < promedio){
+          menor++;
+          }
+    }   
+        System.out.println("la cantidad mayor de las alturas es: "+mayor);
+            System.out.println("la cantidad menor de las alturas es: "+menor);    }
+}
+    
